@@ -16,18 +16,11 @@ async function main() {
 	}
 	const template = `import { Bang } from "../types.ts";
 
+export const BANG_UPDATE_TIME = "${updateDate.toISOString()}";
 export const hashbang: Record<string, Bang> = ${JSON.stringify(hash)};`;
 	await fs.writeFile(path.join(__dirname, "..", "src", "ddbang.ts"), template, {
 		encoding: "utf-8",
 	});
-	const meta = `export const BANG_UPDATE_TIME = "${updateDate.toISOString()}";`;
-	await fs.writeFile(
-		path.join(__dirname, "..", "src", "ddbang-meta.ts"),
-		meta,
-		{
-			encoding: "utf-8",
-		},
-	);
 }
 
 main();
