@@ -39,4 +39,4 @@ jobs:
           preCommands: |
             echo "** installing dependencies **"
             pnpm install
-          command: pnpm deploy
+          command: pnpm run deploy
