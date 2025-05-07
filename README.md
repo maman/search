@@ -14,7 +14,6 @@ This version includes several key improvements over the original project:
 
 1. Pre-fetches DuckDuckGo's bangs during build process
 2. Implements a hashmap for more efficient bang indexing (based on work from https://github.com/t3dotgg/unduck/pull/65)
-3. Optimizes performance by loading bangs on-demand during first search
-4. Provides complete opensearch & autocomplete integration
-5. Supports custom bang definitions (configurable in src/custom.ts)
-6. Deploys via Cloudflare Workers
+3. Provides complete opensearch & autocomplete integration
+4. Supports custom bang definitions (configurable in src/custom.ts)
+5. Deploys via Cloudflare Workers

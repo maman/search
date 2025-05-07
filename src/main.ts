@@ -1,7 +1,7 @@
 import clipboardCheck from "./assets/clipboard-check.svg";
 import clipboard from "./assets/clipboard.svg";
 import { hashbang as custombangs } from "./custom";
-import { BANG_UPDATE_TIME } from "./ddbang-meta";
+import { BANG_UPDATE_TIME, hashbang } from "./ddbang";
 
 function noSearchDefaultPageRender() {
 	if (import.meta.env.DEV) {
@@ -61,7 +61,6 @@ async function getBangredirectUrl() {
 	}
 
 	const LS_DEFAULT_BANG = localStorage.getItem("default-bang") ?? "g";
-	const { hashbang } = await import("./ddbang");
 	const defaultBang = hashbang[LS_DEFAULT_BANG];
 
 	const match = query.match(/!(\S+)/i);
