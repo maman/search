@@ -33,13 +33,12 @@ jobs:
           node-version-file: .tool-versions
           cache: pnpm
           cache-dependency-path: pnpm-lock.yaml
+      - name: 🧐 Install dependencies
+        run: pnpm install
+      - name: 🧪 Build
+        run: pnpm build
       - name: 👷🏻‍♂️ Run wrangler
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          preCommands: |
-            echo "** installing dependencies **"
-            pnpm install
-            echo "** building **"
-            pnpm build
