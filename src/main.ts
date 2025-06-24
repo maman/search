@@ -60,8 +60,8 @@ async function getBangredirectUrl() {
 		return null;
 	}
 
-	const LS_DEFAULT_BANG = localStorage.getItem("default-bang") ?? "g";
-	const defaultBang = hashbang[LS_DEFAULT_BANG];
+	const LS_DEFAULT_BANG = localStorage.getItem("default-bang") ?? "bb";
+	const defaultBang = custombangs[LS_DEFAULT_BANG] || hashbang[LS_DEFAULT_BANG];
 
 	const match = query.match(/!(\S+)/i);
 
